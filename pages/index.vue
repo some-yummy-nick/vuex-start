@@ -11,19 +11,21 @@
       <ul class="items" v-if="items">
         <li v-for="(item,index) in reversedItems" :key="index">{{item}}</li>
       </ul>
-      <div
-        v-for="post in posts.posts"
+      <nuxt-link
+        v-for="post in posts"
+        :to="{name: 'posts-id', params: {id: post.id}}"
         :key="post.id"
+        class="items__link"
       >
         {{post.title}}
-      </div>
+      </nuxt-link>
     </div>
 
   </section>
 </template>
 
 <script>
-  import { mapState, mapMutations } from "vuex";
+  import { mapMutations } from "vuex";
 
   export default {
     data() {
@@ -34,9 +36,9 @@
       }
     },
     computed: {
-      ...mapState([
-        "posts"
-      ]),
+      posts () {
+        return this.$store.state.posts.all
+      },
       reversedItems(){
         return this.items.slice(0).reverse();
       }
@@ -71,6 +73,11 @@
     margin: 0;
     padding: 0;
     margin-bottom: 20px;
+
+    &__link{
+      display: block;
+      padding: 10px 0;
+    }
   }
 </style>
 

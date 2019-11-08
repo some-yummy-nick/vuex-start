@@ -1,17 +1,17 @@
 export const state = () => ({
-  cart: 0
+  count: 0
 });
 
 export const getters = {
-  cart: state => state.cart
+  cart: state => state.count
 };
 
 export const mutations = {
   INCREMENT(state) {
-    state.cart += 1;
+    state.count += 1;
   },
   DECREMENT(state, payload) {
-    state.cart -= payload.minus;
+    state.count -= payload.minus;
   }
 };
 

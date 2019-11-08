@@ -6,19 +6,18 @@
           <img src="http://placeimg.com/150/50/any" alt="">
         </nuxt-link>
       </div>
-      <div class="count">{{cart.cart}}</div>
+      <div class="count">{{cart}}</div>
     </div>
   </header>
 </template>
 
 <script>
-  import { mapState } from "vuex";
 
   export default {
     computed: {
-      ...mapState([
-        'cart'
-      ]),
+      cart(){
+        return this.$store.state.cart.count;
+      }
     }
   }
 </script>

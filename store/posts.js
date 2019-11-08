@@ -1,5 +1,5 @@
 export const state = () => ({
-  posts: []
+  all: []
 });
 
 export const actions = {
@@ -12,14 +12,18 @@ export const actions = {
       payload
     });
     commit('setPost', post);
+  },
+  async fetchPost ({commit}, id) {
+    let post = await this.$axios.$get(`posts/${id}`);
+    commit('setPost', post)
   }
 };
 
 export const mutations = {
   setPosts (state, posts) {
-    state.posts = posts
+    state.all = posts
   },
   setPost (state, post) {
-    state.posts.push(post)
+    state.all.push(post)
   },
 };
