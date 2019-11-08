@@ -1,3 +1,4 @@
+https://limitless-woodland-87728.herokuapp.com/
 # vuex-start
 
 > Nuxt.js project
