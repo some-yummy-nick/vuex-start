@@ -1,4 +1,17 @@
+import axios from 'axios';
+
 module.exports = {
+
+  generate:{
+    routes () {
+      return axios.get('https://jsonplaceholder.typicode.com/posts/')
+        .then((res) => {
+          return res.data.map((post) => {
+            return '/posts/' + post.id
+          })
+        })
+    }
+  },
   /*
   ** Headers of the page
   */
