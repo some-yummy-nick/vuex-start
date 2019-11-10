@@ -1,4 +1,5 @@
 https://limitless-woodland-87728.herokuapp.com/
+https://tatarchap-vue-start.netlify.com/
 # vuex-start
 
 > Nuxt.js project

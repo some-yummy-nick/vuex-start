@@ -3,7 +3,7 @@
     <div class="header__wrapper">
       <div class="logo">
         <nuxt-link :to="{name: 'index'}">
-          <img src="http://placeimg.com/150/50/any" alt="">
+          <img src="https://placeimg.com/150/50/any" alt="">
         </nuxt-link>
       </div>
       <div class="count">{{cart}}</div>
